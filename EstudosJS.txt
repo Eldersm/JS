@@ -1,0 +1,24 @@
+concatenação : +
+o sinal de soma (+) pode ser representado no JS como concatenação ou soma de duas variaveis , então em alguns casos é necessario avisar ao JS que você quer efetuar uma soma para isso você tem que especificar o que a sua variavel é
+
+Number.parseInt() : força a variavel a ser um numero inteiro
+Number.parseFloat(): força o numero a ser um numero real (que contem , )
+Number() : faz com que o proprio JS decida qual o tipo de número é
+
+obs: a letra N em number tem que ser em maiusculo 
+
+
+String(): faz com que o conteudo da variavel seja um string
+
+ntoString (): força o conteudo da variavel a virar um string
+
+
+var.lenght: Diz quantas letras ou quantos caracteres tem o conteudo
+var.toUppperCase():Coloca todas as letras em maiúsculo
+var.toLowerCase():coloca todas as variaveis em minusculo
+
+obs:Vale lembrar que as maiusculas na declaração são necessarias
+
+Mudar valores de acordo com a localidade
+
+var.toLocaleString (pt-BR,{style:'currency', currency:'BRl , USS , EURO entre outros'})
