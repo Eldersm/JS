@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        body{
+            background-color: white;
+        }
+        div#int {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: beige;
+            width: 300px;
+            height: 300px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="int">
+        <p>Interaja....</p>
+        
+    </div>
+
+    <script>
+        var a =window.document.querySelector('div#int')
+        a.addEventListener('click',clicar)
+        a.addEventListener('mouseenter', entrou)
+        a.addEventListener('mouseout', saiu)
+        function clicar(){
+            a.innerText = 'Clicou!'
+            a.style.background = 'Red'
+        }
+        function entrou(){
+            a.innerText = 'Entrou!!'
+        }
+        function saiu(){
+            a.innerText= 'Saiu!!'
+            a.style.background = 'beige'
+        }
+      
+    </script>
+</body>
+</html>

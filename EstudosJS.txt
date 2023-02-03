@@ -22,3 +22,42 @@ obs:Vale lembrar que as maiusculas na declaração são necessarias
 Mudar valores de acordo com a localidade
 
 var.toLocaleString (pt-BR,{style:'currency', currency:'BRl , USS , EURO entre outros'})
+
+
+DOM ---------
+
+usamos o dom para manipular e juntar alguns elementos de JS com html segue algumas coisas que podemos fazer
+window.document.getElementby pode ser usados com varias variações como:
+window.document.getElementbyId()
+window.document.getElementbyTagName()
+window.document.getElementbyName()
+window.document.getElementbyClassName()
+window.document.querySelector()
+
+
+
+window.write(var ou texto aqui) usado para escrever coisas na tela , pode ser usado com texto ou com variaveis para variaveis é necessario adicionar o innertext do que você pegou exemplo:
+
+window.write(a.innerText) 
+
+assim ele é escrito na tela de acordo com o que está escrito na variavel
+:OBS temos o innerHTML que também faz o mesmo mas pega qualquer edição feita no texto como negrito , sublinhado , etc
+
+function: para criar funçõe spodemos fazer de 2 formas :
+dentro do html usando a ação que deseja dentro da tag e criando a "função" exemplo:
+
+div id="area" onlick() <ação ="Clicar()" < função
+
+e dentro do proprio script da seguinte forma
+
+nomedavariavel.addEventListener('ação' , nome da função)
+
+após é necessario configurar essa função da seguinte forma
+
+function nomedafunçao(){ 
+	Digite a função que desejar exemplo:
+	nomedavariavel.innerText = 'Olá, Mundo!'
+}
+
+
+
