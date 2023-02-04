@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If simples e composto</title>
+</head>
+<body>
+    <input type="text" name="input" id="inputi" placeholder="Digite em que pais nasceu">
+    <input type="button" value="Enviar" onclick='clicou()'>
+    <p id="res">O seu resultado sai aqui.</p>
+
+
+    <script>
+        var a =window.document.querySelector('input#inputi')
+        var res =document.querySelector('p#res')
+        res.innerText = a.ariaValueText
+        function clicou(){
+            if (a.innerHTML == 'Brasil'){
+                res.innerText = 'Você é brasileiro'
+            }else{
+                res.style.background ='Blue'
+                res.innerText = a.innerHTML
+            }
+
+
+        }
+    </script>
+</body>
+</html>
