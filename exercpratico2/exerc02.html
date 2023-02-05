@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio pratico 2</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <main>
+        <div>
+            <label for="inumero">Ano de Nascimento: <input type="number" name="numero" id="inumero" required></label> <br>
+            <label for="">Sexo:</label>
+            <label for="imasc">Masculino<input type="radio" name="ver" id="imasc" value="M" checked ="Homem" required></label>
+            <label for="ifem">Feminino<input type="radio" name="ver" id="ifem" value="F" checked="Mulher" required></label><br>
+            <input type="submit" value="Testar" onclick="clicou()">
+            <p id="result">Seu Resultado sai abaixo:</p>
+            <img id="img1" class="imagem"   src="../exercpratico2/imagens/criança-masc.jpg" alt="">
+            <img id="img2" class="imagem" src="../exercpratico2/imagens/criança-fem.jpg" alt="">
+            <img id="img3" class="imagem" src="../exercpratico2/imagens/adolesc-masc.jpg" alt="">
+            <img id="img4" class="imagem" src="../exercpratico2/imagens/adolesc-fem.jpg" alt="">
+            <img id="img5" class="imagem" src="../exercpratico2/imagens/homem.jpg" alt="">
+            <img id="img6" class="imagem" src="../exercpratico2/imagens/mulher.jpg" alt="">
+            <img id="img7" class="imagem" src="../exercpratico2/imagens/homem-vel.jpg" alt="">
+            <img id="img8" class="imagem" src="../exercpratico2/imagens/mulher-vel.jpg" alt="">
+        </div>
+    </main>
+
+    <script>
+        var ano_nasc = document.querySelector("input#inumero") //armazena o conteudo do input dentro de uma variavel
+        var ano1 = new Date() //cria uma variavel para pegar datas , hora entre outras coisas 
+        var ano_atual =ano1.getFullYear() //pega o ano atual
+        let numero_ano = Number(ano_nasc.value) // necessário para pegar o valor de ano que é um String e converte para Number para calculo
+        var res =document.querySelector("p#result")
+        var sex_masc =document.querySelector("input#imasc")
+        var sex_fem = document.querySelector("input#ifem")
+
+        function clicou(){
+            let numero_ano = Number(ano_nasc.value)
+            var sex_masc =document.querySelector("input#imasc") //necessário colocar um value e um checked
+            var sex_fem = document.querySelector("input#ifem")   //necessário colocar um value e um checked
+            
+            idade_atual = ano_atual - numero_ano //calcula o ano atual menos o ano que o cliente digitou
+            if(ano_nasc.value ===""){ //faz o check se a variavel está vazia 
+                window.alert('Necessario colocar o ano de nascimento , por favor tente novamente') //exibe uma menasgem no navegador 
+            
+            }
+            else if(numero_ano > ano_atual){
+                window.alert('Por favor insira o ano de nascimento correto!')
+            }
+            else if (numero_ano <1901){
+                window.alert('Por favor digite o ano de nascimento correto!')
+            }
+            else{
+                if (idade_atual <= 10 && sex_masc.checked ==true ){  //Faz o check se o Masculino foi a opção no input:r  
+                    res.innerHTML = `Detectamos que você tem ${idade_atual} anos  e é do sexo Masculino`
+                    document.querySelector('img#img1').style.display = 'block' // exibe a imagem que foi escondida no CSS
+                    document.querySelector('img#img2').style.display='none'     // tira a imagem caso o cliente mude a idade para outra
+                    document.querySelector('img#img3').style.display='none'
+                    document.querySelector('img#img4').style.display='none'
+                    document.querySelector('img#img5').style.display='none'
+                    document.querySelector('img#img6').style.display='none'
+                    document.querySelector('img#img7').style.display='none'
+                    document.querySelector('img#img8').style.display='none'
+
+                }else if (idade_atual <= 10 && sex_fem.checked == true ){ //faz o check se o Feminino foi a opção no input:r
+                    res.innerHTML = `Detectamos que você tem ${idade_atual} anos e é do sexo Feminino`
+                    document.querySelector('img#img2').style.display='block'
+                    document.querySelector('img#img1').style.display='none'
+                    document.querySelector('img#img3').style.display='none'
+                    document.querySelector('img#img4').style.display='none'
+                    document.querySelector('img#img5').style.display='none'
+                    document.querySelector('img#img6').style.display='none'
+                    document.querySelector('img#img7').style.display='none'
+                    document.querySelector('img#img8').style.display='none'
+
+                }else if (idade_atual > 11 && sex_masc.checked ==true && idade_atual <=18 ){
+                    res.innerHTML = `Detectamos que você tem ${idade_atual} anos  e é do sexo Masculino`
+                    document.querySelector('img#img3').style.display ='block'
+                    document.querySelector('img#img4').style.display ='none'
+                    document.querySelector('img#img2').style.display='none'
+                    document.querySelector('img#img1').style.display='none'
+                    document.querySelector('img#img5').style.display='none'
+                    document.querySelector('img#img6').style.display='none'
+                    document.querySelector('img#img7').style.display='none'
+                    document.querySelector('img#img8').style.display='none'
+
+                }else if(idade_atual > 11 && sex_fem.checked ==true && idade_atual <=18 ){
+                    res.innerHTML = `Detectamos que você tem ${idade_atual} anos e é do sexo Feminino`
+                    document.querySelector('img#img4').style.display ='block'
+                    document.querySelector('img#img3').style.display ='none'
+                    document.querySelector('img#img2').style.display='none'
+                    document.querySelector('img#img1').style.display='none'
+                    document.querySelector('img#img5').style.display='none'
+                    document.querySelector('img#img6').style.display='none'
+                    document.querySelector('img#img7').style.display='none'
+                    document.querySelector('img#img8').style.display='none'
+                }
+                else if (idade_atual <= 55 && sex_masc.checked ==true){
+                    res.innerHTML = `Detectamos que você tem ${idade_atual} anos  e é do sexo Masculino`
+                    document.querySelector('img#img5').style.display ='block'
+                    document.querySelector('img#img6').style.display='none'
+                    document.querySelector('img#img2').style.display='none'
+                    document.querySelector('img#img1').style.display='none'
+                    document.querySelector('img#img3').style.display='none'
+                    document.querySelector('img#img4').style.display='none'
+                    document.querySelector('img#img7').style.display='none'
+                    document.querySelector('img#img8').style.display='none'
+
+                }else if(idade_atual <= 55 && sex_fem.checked ==true) {
+                    res.innerHTML = `Detectamos que você tem ${idade_atual} anos e é do sexo Feminino`
+                    document.querySelector('img#img6').style.display='block'
+                    document.querySelector('img#img5').style.display='none'
+                    document.querySelector('img#img4').style.display='none'
+                    document.querySelector('img#img3').style.display='none'
+                    document.querySelector('img#img2').style.display='none'
+                    document.querySelector('img#img1').style.display='none'
+                    document.querySelector('img#img7').style.display='none'
+                    document.querySelector('img#img8').style.display='none'
+
+                }else if (idade_atual >= 56 && sex_masc.checked ==true){
+                    res.innerHTML = `Detectamos que você tem ${idade_atual} anos  e é do sexo Masculino`
+                    document.querySelector('img#img7').style.display ='block'
+                    document.querySelector('img#img8').style.display ='none'
+                    document.querySelector('img#img2').style.display='none'
+                    document.querySelector('img#img1').style.display='none'
+                    document.querySelector('img#img3').style.display='none'
+                    document.querySelector('img#img4').style.display='none'
+                    document.querySelector('img#img5').style.display='none'
+                    document.querySelector('img#img6').style.display='none'
+
+                }else if (idade_atual >= 56 && sex_fem.checked==true){
+                    res.innerHTML = `Detectamos que você tem ${idade_atual} anos e é do sexo Feminino`
+                    document.querySelector('img#img8').style.display ='block'
+                    document.querySelector('img#img7').style.display ='none'
+                    document.querySelector('img#img6').style.display='none'
+                    document.querySelector('img#img5').style.display='none'
+                    document.querySelector('img#img4').style.display='none'
+                    document.querySelector('img#img3').style.display='none'
+                    document.querySelector('img#img2').style.display='none'
+                    document.querySelector('img#img1').style.display='none'
+        }
+    }
+        }
+    </script>
+    
+</body>
+</html>

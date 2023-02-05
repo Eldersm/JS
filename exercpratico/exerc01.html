@@ -14,9 +14,9 @@
             <h2 id="agora_hora">
                 Agora são tal horas
             </h2>
-            <img id="img1" class="imagens" src="../imagens/manha.jpg" alt="Imagem manhã" onchange="Mudou()">
-            <img  id="img2" class="imagens" src="../imagens/tarde.jpg" alt="Imagem tarde">
-            <img id="img3" class="imagens"  src="../imagens/noite.jpg" alt="Imagem noite">
+            <img id="img1" class="imagens" src="../exercpratico/imagens/manha.jpg" alt="Imagem manhã" onchange="Mudou()">
+            <img  id="img2" class="imagens" src="../exercpratico/imagens/tarde.jpg" alt="Imagem tarde">
+            <img id="img3" class="imagens"  src="../exercpratico/imagens/noite.jpg" alt="Imagem noite">
         </div>
     </main>
 
@@ -29,11 +29,11 @@
     ('h2#agora_hora')
     
         if (hora < 12 ){
-            agora_hora.innerHTML = `Agora são ${hora}s.`;
+            agora_hora.innerHTML = `Agora são ${hora} horas.`;
             window.document.querySelector('img#img1').style.display ='block'
         }else if(hora <= 18) {
             agora_hora.innerText = `Agora são ${hora} Horas.`
-            document.body.style.background = '#C76F22'
+            document.body.style.background = '#A8643D'
             document.querySelector('img#img2').style.display ='block'
 
         }else if (hora > 19 || hora <= 24){
