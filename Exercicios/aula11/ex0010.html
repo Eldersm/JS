@@ -10,18 +10,19 @@
     <input type="text" name="input" id="inputi" placeholder="Digite em que pais nasceu">
     <input type="button" value="Enviar" onclick='clicou()'>
     <p id="res">O seu resultado sai aqui.</p>
+    <p id="teste">Teste</p>
 
 
     <script>
-        var a =window.document.querySelector('input#inputi')
-        var res =document.querySelector('p#res')
-        res.innerText = a.ariaValueText
         function clicou(){
-            if (a.innerHTML == 'Brasil'){
-                res.innerText = 'Você é brasileiro'
+            var a = window.document.querySelector('input#inputi');
+            var res =document.querySelector('p#res');       
+            var tex = a.value
+            if ( tex.toUpperCase() == 'BRASIL' || tex.toLowerCase() == 'brasil'){
+                res.innerHTML = `Você nasceu no <strong>${tex}</strong>,  Portanto é Brasileiro`
             }else{
-                res.style.background ='Blue'
-                res.innerText = a.innerHTML
+                res.innerHTML =`Você nasceu em <strong>${tex}</strong> , Portanto é estrangeiro`
+
             }
 
 

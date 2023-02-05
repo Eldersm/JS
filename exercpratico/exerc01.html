@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro Site</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <h1>Hora do Dia</h1>
+    <main>
+        <div id="horas">
+            <h2 id="agora_hora">
+                Agora são tal horas
+            </h2>
+            <img id="img1" class="imagens" src="../imagens/manha.jpg" alt="Imagem manhã" onchange="Mudou()">
+            <img  id="img2" class="imagens" src="../imagens/tarde.jpg" alt="Imagem tarde">
+            <img id="img3" class="imagens"  src="../imagens/noite.jpg" alt="Imagem noite">
+        </div>
+    </main>
+
+    
+    <script>
+    var img = window.document.querySelector('imm#imagem')
+    var agora = new Date()
+    var hora = agora.getHours()
+    var agora_hora =window.document.querySelector
+    ('h2#agora_hora')
+    
+        if (hora < 12 ){
+            agora_hora.innerHTML = `Agora são ${hora}s.`;
+            window.document.querySelector('img#img1').style.display ='block'
+        }else if(hora <= 18) {
+            agora_hora.innerText = `Agora são ${hora} Horas.`
+            document.body.style.background = '#C76F22'
+            document.querySelector('img#img2').style.display ='block'
+
+        }else if (hora > 19 || hora <= 24){
+            agora_hora.innerHTML = `Agora são ${hora} horas`
+            document.body.style.background = '#5353B5'
+            document.querySelector('img#img3').style.display ='block'
+        }
+
+    </script>
+</body>
+</html>
