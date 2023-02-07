@@ -7,39 +7,45 @@
     <title>Primeiro Site</title>
     <link rel="stylesheet" href="estilos/style.css">
 </head>
-<body>
-    <h1>Hora do Dia</h1>
-    <main>
+<body onload="carregou()">
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+    <main >
         <div id="horas">
-            <h2 id="agora_hora">
+            <h2 id="agora_hora" >
                 Agora são tal horas
             </h2>
-            <img id="img1" class="imagens" src="../exercpratico/imagens/manha.jpg" alt="Imagem manhã" onchange="Mudou()">
-            <img  id="img2" class="imagens" src="../exercpratico/imagens/tarde.jpg" alt="Imagem tarde">
-            <img id="img3" class="imagens"  src="../exercpratico/imagens/noite.jpg" alt="Imagem noite">
+            <img id="img1" class="imagens" src="../exercpratico/imagens/manha.jpg" alt="Imagem manhã" >
         </div>
     </main>
+    <footer id="final">
+        <p>
+           Feito por <a href="https://github.com/Eldersm?tab=repositories" target="_blank" rel="next">Eldersm</a>
+        </p>
+    </footer>
 
     
     <script>
-    var img = window.document.querySelector('imm#imagem')
-    var agora = new Date()
-    var hora = agora.getHours()
-    var agora_hora =window.document.querySelector
-    ('h2#agora_hora')
-    
-        if (hora < 12 ){
-            agora_hora.innerHTML = `Agora são ${hora} horas.`;
-            window.document.querySelector('img#img1').style.display ='block'
-        }else if(hora <= 18) {
-            agora_hora.innerText = `Agora são ${hora} Horas.`
-            document.body.style.background = '#A8643D'
-            document.querySelector('img#img2').style.display ='block'
+        function carregou(){
+            var img = window.document.querySelector('img#img1')
+            var agora = new Date()
+            var hora = agora.getHours()
+            var agora_hora =window.document.querySelector
+            ('h2#agora_hora')
 
-        }else if (hora > 19 || hora <= 24){
-            agora_hora.innerHTML = `Agora são ${hora} horas`
-            document.body.style.background = '#5353B5'
-            document.querySelector('img#img3').style.display ='block'
+            if (hora >= 1 || hora <= 12 ){
+                agora_hora.innerHTML = `Agora são ${hora} horas.`;
+                window.document.querySelector('img#img1').style.display ='block'
+            }else if(hora <= 18) {
+                agora_hora.innerText = `Agora são ${hora} Horas.`
+                document.body.style.background = '#A8643D'
+                img.src='../exercpratico/imagens/tarde.jpg'
+            }else if (hora > 19 || hora <= 24){
+                agora_hora.innerHTML = `Agora são ${hora} horas`
+                document.body.style.background = '#5353B5'
+                img.src='../exercpratico/imagens/noite.jpg'
+            }
         }
 
     </script>

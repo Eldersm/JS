@@ -43,15 +43,23 @@ img.imagens {
     border-radius: 50%;
     margin-bottom: 40px;   
 }
-img#img1{
-    display: none;
+
+
+footer#final{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-img#img2{
-    display:none;
+footer > p{
+    color:white;
 }
-img#img3 {
-    display:none;
-    height: 60%;
-    width: 50%;
+
+footer > p > a{
+    text-decoration: none;
+    color: black;
+}
+footer > p > a:hover {
+    text-decoration: underline white;
+
 }
 
